@@ -1,0 +1,24 @@
+function sendRecurringEmail() {
+
+  ////////// UPDATE THESE  ////////// 
+  var recipientEmails = "mauro.vieira@itamaraty.gov.br, portal@itamaraty.gov.br, eresp@itamaraty.gov.br, administ.eresp@itamaraty.gov.br";
+  var name = "[SEU NOME]";
+  ////////// STOP HERE  ////////// 
+
+// Array of possible subject lines
+  var subjects = [
+    "URGENTE: UNRWA e Gaza precisam de ajuda!",
+    "Ação necessária: Ajuda internacional em Gaza",
+    "URGENTE: Prove o comprometimento com a Palestina",
+  ];
+
+  // Randomly select a subject line
+  var randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+
+  var body = "Excelentíssimo Senhor Ministro,<br><br> Em mais uma demonstração de punição coletiva, um ato proibido pelo direito internacional, onze países retiraram o seu apoio à UNRWA, uma das mais importantes agências que trabalham diretamente em Gaza oferecendo alimentos, água potável, roupas, tendas, cobertores e cuidados psicológicos a 2,5 pessoas. milhões de palestinos presos numa zona de guerra durante o bloqueio israelense à ajuda humanitária. <br><br> A justificativa para tal ação é uma acusação da inteligência militar israelense de que 12 dos 30.000 funcionários da UNRWA (0,04% da organização) teriam participado do ataque de 7 de Outubro. A alegação não é substancial e Israel ainda não apresentou provas imparciais. É importante ter em mente que ao longo dos anos foram feitos vários relatos de que as Forças de Defesa de Israel (IDF) conseguem que os palestinianos confessem crimes sob tortura, e que o tratamento desumano se tornou pior e mais frequente desde 7 de Outubro. Mesmo assim, Austrália, Alemanha, Canadá, Estados Unidos, Estônia, Finlândia, França, Itália, Japão, Países Baixos e Reino Unido consideraram apropriado retirar completamente o apoio financeiro à única instituição oficial que vem tentando prevenir a morte de crianças, jovens, adultos e idosos palestinos. <br><br> Na mesma semana em que a Corte Internacional de Justiça ordenou que Israel trabalhasse para prevenir os atos genocidas e que tomasse “medidas imediatas e eficazes para garantir a prestação de serviços básicos e assistência humanitária urgentemente necessários para combater as condições de vida adversas enfrentadas pelos palestinos na Faixa de Gaza”, os países aliados a Israel adotam ações que causarão ainda mais sofrimento e mortes para o povo Palestino, sendo, assim, cúmplices diretos no genocídio desse povo. <br><br>Dadas tais circunstâncias, é fundamental, mais do que nunca, que os governos que não são cúmplices destas ações criminosas comecem a ajudar diretamente os palestinianos e a mobilizar-se para evitar que ainda mais pessoas morram de fome e doenças na Faixa de Gaza.<br><br> Como potência mundial, membro do BRICS e um dos maiores representantes do Sul Global, é de extrema importância que o Brasil seja um exemplo para o mundo e atue diretamente no auxílio aos palestinos e se mobilize para impedir que ainda mais pessoas morram de fome na Faixa de Gaza. O Brasil já trabalhou em conjunto com a UNRWA, de 2010 a 2013, e fez a diferença na vida de milhares de pessoas. É hora de retomarem os laços com a agência, demonstrando firmemente que o país não compactua com o bombardeio de hospitais, apartamentos, escolas, universidades, centros de refugiados da ONU e rotas de fuga informadas por Israel como sendo seguras, mas que se convertem em um cenário de mortes de Palestinos por snipers israelenses. <br><br> Faço então um apelo para que os representantes brasileiros, que detêm poder para fazer algo a respeito desse quadro tão doloroso, não compactuem com a punição coletiva por parte dos países que covardemente estão financiando e auxiliando a matança em Gaza. Em nome dos cidadãos ao redor do mundo, que por semanas vêm se manifestando em favor dos Palestinos e advogando por uma Palestina Livre, peço encarecidamente que o Brasil financie a UNRWA nesse momento tão catastrófico da história. <br><br>Atenciosamente,<br>"+nome+"<br>";
+
+  // Create and send the email
+  GmailApp.sendEmail(recipientEmails, randomSubject, body);
+  // Log the sent email in the Apps Script log
+  Logger.log("Email sent to " + recipientEmails);
+}
